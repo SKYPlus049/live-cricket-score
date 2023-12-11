@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Cricket Score</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #score-container {
+      margin: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      font-size : 18px;
+    }
+
+    button {
+      margin: 17px;
+      padding: 17px;
+      font-size: 17px;
+      cursor: pointer;
+    }
+      
+  </style>
+</head>
+<body>
+  <h1>Live Cricket Score</h1>
+  <div id="score-container">
+    <p>Runs: <span id="runs">0</span></p>
+    <p>Wickets: <span id="wickets">0</span></p>
+    <p>Overs: <span id="overs">0</span></p>
+  </div>
+
+  <h3>Update Runs:</h3>
+  <button onclick="addRuns(1)">1</button>
+   <button onclick="addRuns(2)">2</button>
+  <button onclick="addRuns(4)">4</button>
+  <button onclick="addRuns(6)">6</button>
+
+  <h3>Update Wickets:</h3>
+  <button onclick="addWicket()">Wicket</button>
+
+  <h3>Update Overs:</h3>
+  <button onclick="addOver()">Over</button>
+<br>
+<div id="footer">
+    <p>&copy; 2023 Vishal Ghuge</p>
+</div>
+
+  <script>
+    let currentRuns = 0;
+    let currentWickets = 0;
+    let currentOvers = 0;
+
+    function updateScore() {
+      document.getElementById('runs').innerText = currentRuns;
+      document.getElementById('wickets').innerText = currentWickets;
+      document.getElementById('overs').innerText = currentOvers;
+    }
+
+    function addRuns(runs) {
+      currentRuns += runs;
+      updateScore();
+    }
+
+    function addWicket() {
+      currentWickets++;
+      updateScore();
+    }
+
+    function addOver() {
+      currentOvers += 1;
+      updateScore();
+    }
+  </script>
+
+</div>  
+</body>
+</html>
